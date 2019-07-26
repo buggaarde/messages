@@ -23,12 +23,12 @@
       next next
       byte-array))
 
-(def to-byte
+(def protocol->byte
   {:subscribe   (byte 1)
    :unsubscribe (byte 2)
    :publish     (byte 3)})
 
-(def from-byte
+(def byte->protocol
   (clojure.set/map-invert protocol->byte))
 
 (defn SUB [subject]
